@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.mcphysics'
+version = plugin_version
+
+java {
+    sourceCompatibility = JavaVersion.toVersion(java_version)
+    targetCompatibility = JavaVersion.toVersion(java_version)
+}
+
+repositories {
+    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:${paper_api_version}"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveFileName = "${plugin_name}-${plugin_version}.jar"
+    manifest {
+        attributes(
+            'Implementation-Title': plugin_name,
+            'Implementation-Version': plugin_version
+        )
+    }
+}
+
+processResources {
+    filesMatching('plugin.yml') {
+        expand(
+            'name': plugin_name,
+            'version': plugin_version,
+            'main': plugin_main
+        )
+    }
+}

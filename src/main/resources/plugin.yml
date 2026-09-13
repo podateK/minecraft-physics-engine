@@ -1,0 +1,18 @@
+name: ${name}
+version: ${version}
+main: ${main}
+api-version: '1.21'
+description: Realistic physics engine for Minecraft
+authors: [PhysicsEngine]
+commands:
+  physics:
+    description: Physics engine commands
+    usage: /<command> <reload|toggle|spawn|debug>
+    permission: physicsengine.command
+permissions:
+  physicsengine.command:
+    description: Allows using physics commands
+    default: op
+  physicsengine.debug:
+    description: Allows debug visualization
+    default: op

@@ -1,0 +1,67 @@
+physics:
+  tick-rate: 20
+  gravity: -9.81
+  air-resistance: 0.01
+  ground-friction: 0.3
+  max-rigid-bodies: 500
+  simulation-range: 64
+
+explosion:
+  enabled: true
+  max-power: 100.0
+  block-damage: true
+  entity-damage: true
+  shockwave-steps: 20
+  block-resistance:
+    STONE: 30
+    COBBLESTONE: 30
+    IRON_BLOCK: 60
+    DIAMOND_BLOCK: 100
+    BEDROCK: -1
+    OBSIDIAN: 1200
+    WATER: 100
+    LAVA: 100
+    DIRT: 15
+    SAND: 10
+    GRAVEL: 10
+    GLASS: 3
+    WOOD: 15
+    LEAVES: 2
+    TNT: 0
+
+fluid:
+  enabled: true
+  max-flow-distance: 8
+  flow-speed: 5
+  lava-flow-speed: 30
+  viscosity:
+    WATER: 1.0
+    LAVA: 6.0
+
+projectile:
+  enabled: true
+  arrow-drag: 0.001
+  trident-drag: 0.0005
+  max-flight-time: 200
+
+falling-block:
+  enabled: true
+  fall-speed: 0.04
+  block-break-threshold: 2.5
+  affected-blocks:
+    - SAND
+    - RED_SAND
+    - GRAVEL
+    - ANVIL
+    - CHIPPED_ANVIL
+    - DAMAGED_ANVIL
+    - DRAGON_EGG
+    - SCAFFOLDING
+    - CONCRETE_POWDER
+
+debug:
+  enabled: false
+  show-forces: false
+  show-velocities: false
+  show-collision-boundaries: false
+  particle-type: FLAME
